@@ -17,15 +17,10 @@
         class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
         style="--bs-scroll-height: 100px"
       >
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
         <li ngbDropdown class="nav-item dropdown expend">
           <a
             ngbDropdownToggle
             class="nav-link dropdown-toggle"
-            [class.show]="show"
-            href="#"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -36,8 +31,6 @@
             <li ngbDropdownItem *ngFor="let part of bodyParts">
               <a
                 class="dropdown-item"
-                href="#"
-                #bodypart
                 (click)="getBodyPartBy(part)"
                 >{{ part }}</a
               >
@@ -48,7 +41,6 @@
           <a
             ngbDropdownToggle
             class="nav-link dropdown-toggle"
-            href="#"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -59,8 +51,6 @@
             <li ngbDropdownItem *ngFor="let target of targetMuscles">
               <a
                 class="dropdown-item"
-                href="#"
-                #targetMuscle
                 (click)="selectTargetMuscle(target)"
                 >{{ target }}</a
               >
@@ -71,7 +61,6 @@
           <a
             ngbDropdownToggle
             class="nav-link dropdown-toggle"
-            href="#"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"

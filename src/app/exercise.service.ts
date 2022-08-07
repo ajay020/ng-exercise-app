@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Exercise } from './model/exercise';
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +39,8 @@ export class ExerciseService {
     });
   }
 
-  getAllExercise(){
-    return this.httpClient.get(this.url, {
+  getAllExercise() {
+    return this.httpClient.get<Exercise[]>(this.url, {
         headers: {
             'X-RapidAPI-Key': this.API_KEY,
             'X-RapidAPI-Host': this.API_HOST
@@ -48,7 +49,7 @@ export class ExerciseService {
   }
 
   getByBodyPart(name:string){
-    return this.httpClient.get(this.url+'/bodyPart/'+name , {
+    return this.httpClient.get<Exercise[]>(this.url+'/bodyPart/'+name , {
         headers: {
             'X-RapidAPI-Key': this.API_KEY,
             'X-RapidAPI-Host': this.API_HOST
@@ -56,7 +57,7 @@ export class ExerciseService {
     });
   }
   getByTargetMuscle(name:string){
-    return this.httpClient.get(this.url+'/target/'+name , {
+    return this.httpClient.get<Exercise[]>(this.url+'/target/'+name , {
         headers: {
             'X-RapidAPI-Key': this.API_KEY,
             'X-RapidAPI-Host': this.API_HOST
@@ -64,7 +65,7 @@ export class ExerciseService {
     });
   }
   getByEquipment(name:string){
-    return this.httpClient.get(this.url+'/equipment/'+name , {
+    return this.httpClient.get<Exercise[]>(this.url+'/equipment/'+name , {
         headers: {
             'X-RapidAPI-Key': this.API_KEY,
             'X-RapidAPI-Host': this.API_HOST
